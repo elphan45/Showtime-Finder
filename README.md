@@ -16,7 +16,7 @@ A Python-based web application that aggregates movie showtimes from various thea
 - CinemaxX Stuttgart Liederhalle
 - Capitol Lichtspiele Kornwestheim
 - Traumpalast Leonberg
-- Lokah Films Events
+- Lokah Films Events [Official Movie Distributor for South- Indian Movies]
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ A Python-based web application that aggregates movie showtimes from various thea
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone [https://github.com/elphan45/Showtime-Finder.git]
 cd stuttgart-movie-finder
 ```
 
