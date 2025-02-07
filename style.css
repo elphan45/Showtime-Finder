@@ -1,0 +1,50 @@
+/* Custom styling for Streamlit app */
+.stApp {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stButton > button {
+    width: 100%;
+    background-color: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.stButton > button:hover {
+    background-color: #ff3333;
+}
+
+/* Theater cards */
+div[data-testid="stExpander"] {
+    background-color: #f0f2f6;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+/* Success message */
+div[data-baseweb="notification"] {
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Warning message */
+div[class*="stAlert"] {
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Links */
+a {
+    color: #ff4b4b;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
