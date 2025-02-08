@@ -68,5 +68,6 @@ streamlit run movie_scraper.py
 5. Create a Pull Request
 
 ## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+ 
+- Feel free to make changes.
+- Open to any suggestions 
