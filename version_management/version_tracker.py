@@ -268,3 +268,56 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+import subprocess
+import re
+
+
+def get_git_tags():
+    try:
+        tags_output = subprocess.check_output(["git", "tag", "--list", "v*"]).decode().strip()
+        return tags_output.splitlines() if tags_output else []
+    except Exception as e:
+        print("Error fetching git tags:", e)
+        return []
+
+
+def parse_version(tag):
+    # Expects tag format: vMajor.Minor.Patch, e.g., v1.0.0
+    match = re.match(r'v(\d+)\.(\d+)\.(\d+)', tag)
+    if match:
+        return tuple(map(int, match.groups()))
+    return None
+
+
+def determine_next_version():
+    tags = get_git_tags()
+    versions = []
+    for tag in tags:
+        ver = parse_version(tag)
+        if ver:
+            versions.append(ver)
+    if not versions:
+        return (1, 0, 0)  # First release
+    versions.sort()
+    major, minor, patch = versions[-1]
+    # Increment minor version
+    return (major, minor + 1, 0)
+
+
+def format_version(version_tuple):
+    return f'v{version_tuple[0]}.{version_tuple[1]}.{version_tuple[2]}'
+
+
+def create_release():
+    next_version = determine_next_version()
+    new_tag = format_version(next_version)
+    try:
+        subprocess.check_call(["git", "tag", new_tag])
+        print(f'Created new release tag: {new_tag}')
+    except Exception as e:
+        print("Error creating new git tag:", e)
+
+
+if __name__ == '__main__':
+    create_release()

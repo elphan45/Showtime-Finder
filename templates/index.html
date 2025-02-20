@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Showtime Finder</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Showtime Finder</h1>
+  <form method="post">
+    <input type="text" name="movie" placeholder="Enter movie name..." required>
+    <button type="submit">Search</button>
+  </form>
+  {% if results %}
+    <h2>Results:</h2>
+    <ul>
+    {% for res in results %}
+      <li>{{ res }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
