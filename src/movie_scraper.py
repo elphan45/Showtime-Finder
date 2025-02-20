@@ -1,3 +1,5 @@
+# Language: Python
+# filepath: /home/student4/repositories/Private_Repo/Showtime-Finder/movie_scraper.py
 import streamlit as st
 import requests
 from bs4 import BeautifulSoup
